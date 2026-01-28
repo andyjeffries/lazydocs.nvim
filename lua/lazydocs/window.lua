@@ -39,6 +39,16 @@ function M.create_floating(opts)
   -- Set window options
   vim.api.nvim_set_option_value("winhl", "Normal:Normal,FloatBorder:FloatBorder", { win = win })
 
+  -- Auto-close window when focus is lost
+  vim.api.nvim_create_autocmd("WinLeave", {
+    buffer = buf,
+    callback = function()
+      if vim.api.nvim_win_is_valid(win) then
+        vim.api.nvim_win_close(win, true)
+      end
+    end,
+  })
+
   return buf, win
 end
 
