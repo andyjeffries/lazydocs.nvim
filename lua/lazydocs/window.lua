@@ -49,6 +49,13 @@ function M.create_floating(opts)
     end,
   })
 
+  -- Allow 'q' to close window in normal mode (after scrolling exits terminal mode)
+  vim.keymap.set("n", "q", function()
+    if vim.api.nvim_win_is_valid(win) then
+      vim.api.nvim_win_close(win, true)
+    end
+  end, { buffer = buf, silent = true })
+
   return buf, win
 end
 
