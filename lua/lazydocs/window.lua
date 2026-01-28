@@ -56,6 +56,12 @@ function M.create_floating(opts)
     end
   end, { buffer = buf, silent = true })
 
+  -- Disable mouse scrolling to prevent accidentally exiting terminal mode
+  local scroll_keys = { "<ScrollWheelUp>", "<ScrollWheelDown>", "<ScrollWheelLeft>", "<ScrollWheelRight>" }
+  for _, key in ipairs(scroll_keys) do
+    vim.keymap.set({ "n", "t" }, key, "<Nop>", { buffer = buf, silent = true })
+  end
+
   return buf, win
 end
 
