@@ -1,11 +1,11 @@
 # lazydocs.nvim
 
-Neovim plugin for [LazyDocs](https://github.com/lazydocs/lazydocs) - a Lazygit-style TUI for browsing DevDocs documentation.
+Neovim plugin for [LazyDocs](https://github.com/andyjeffries/lazydocs) - a Lazygit-style TUI for browsing DevDocs documentation.
 
 ## Requirements
 
 - Neovim 0.9+
-- [lazydocs](https://github.com/lazydocs/lazydocs) binary installed
+- [lazydocs](https://github.com/andyjeffries/lazydocs) binary installed
 
 ## Installation
 
